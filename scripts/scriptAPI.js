@@ -1,12 +1,14 @@
 const postCodeBase = 'https://geo.api.gouv.fr/communes?codePostal=';
 const codeInput = document.getElementById("postCodeInput");
 const cityRow = document.getElementById("cityRow");
+const errors = document.getElementById("errors");
 
 let codeInputValue = codeInput;
 
 
 document.getElementById("postCodeForm").addEventListener("submit", function(event) {
     event.preventDefault();
+
     fetch(postCodeBase+codeInput.value)
         .then(response => {
             if (!response.ok) {
@@ -16,16 +18,20 @@ document.getElementById("postCodeForm").addEventListener("submit", function(even
         })
         .then(data => {
             console.log(data);
-            data.forEach(element => {
-                let row = document.getElementById("cityInput");
-                const option = document.createElement("option");
-                option.text = element.nom;
-                option.value = element.code;
-                row.add(option);
-            });
+            if (data.length === 0) {
+                throw new Error("The post code is wrong");
+            } else {
+                data.forEach(element => {
+                    let row = document.getElementById("cityInput");
+                    const option = document.createElement("option");
+                    option.text = element.nom;
+                    option.value = element.code;
+                    row.add(option);
+                });
+            }
         })
         .catch(error => {
-            console.log('There was a problem with the fetch operation : ', error);
+            errors.textContent = 'There was a problem with the fetch operation : ' + error;
         });
 });
 
