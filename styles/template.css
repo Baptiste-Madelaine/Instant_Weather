@@ -1,0 +1,50 @@
+
+.wrapper{
+    display: flex;
+    
+}
+#today{
+    flex-direction: row;
+    width: 100%;
+}
+#sun{
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    gap: 10px;
+}
+#temp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+    margin-left: 20px;
+}
+h6, h3{
+    margin: 0;
+}
+#spec{
+    flex-grow: 2;
+    flex-direction: column;
+    align-items: baseline;
+    border-left: solid 1px;
+    padding-left: 10px;
+}
+i{
+    margin-right: 20px;
+}
+#big{
+    justify-content: center;
+    border: solid black 2px;
+    border-radius: 25px;
+    width: 100%;
+
+}
+#oui{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:start;
+    flex-grow: 6;
+}

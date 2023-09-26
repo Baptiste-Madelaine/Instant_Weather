@@ -5,9 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cards</title>
+    <link rel="stylesheet" href="../styles/template.css">
 
 </head>
 <body>
+    <template id="template">
+        <div class="wrapper" id="big">
+                <div id="today" class="wrapper">
+                    <div id="oui">
+                        <h2>Caen</h2>
+                        <div id="sun" class="wrapper">
+                            <i class="fa-solid fa-sun fa-2xl"></i>
+                            <div id="temp">
+                                <h3 id="maxTemp">27°C</h3>
+                                <h6 id="minTemp">26°C</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper" id="spec">
+                        <p><i class="fa-solid fa-wind"></i>20 km/h</p>
+                        <p><i class="fa-solid fa-signal"></i>6</p>
+                        <p><i class="fa-regular fa-clock"></i>0.2 h</p>
+                    </div>
+                </div>
+                <div id="forecast" class="wrapper">
+        
+                </div>
+            </div>
+    </template>
+    <script src="https://kit.fontawesome.com/cfa8c7d08e.js" crossorigin="anonymous"></script>
     <script src="../scripts/cards.js"></script>
 </body>
 </html>
