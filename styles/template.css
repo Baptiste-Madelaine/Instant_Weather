@@ -39,6 +39,7 @@ i{
     border: solid black 2px;
     border-radius: 25px;
     width: 100%;
+    flex-direction: column;
 
 }
 #oui{
@@ -47,4 +48,22 @@ i{
     align-items: center;
     justify-content:start;
     flex-grow: 6;
+}
+#card_forecast{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    border: black 2px solid;
+    padding: 10px;
+    min-width: 100px;
+    border-radius: 25px;
+    margin: 10px;
+}
+#card_forecast > p{
+    margin: 0;
+}
+#forecast{
+    overflow-x: scroll;
+    padding: 5px;
 }
