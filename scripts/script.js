@@ -13,7 +13,17 @@ document.addEventListener("DOMContentLoaded", function(){
         .catch(error => console.log("Erreur : ",error)); // Handle any errors that occur during the fetch operation
     };
 
-    // Call the getWeatherPromise function with an INSEE code
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Call the getWeatherPromise function with an INSEE code (use this later)
     getWeatherPromise(50502)
         .then(data => {
             // Handle the weather data here, e.g., log it to the console
