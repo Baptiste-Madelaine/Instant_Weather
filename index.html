@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instant Weather</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-    <h1>hello world</h1>
-    
-<script src="./scripts/script.js"></script>
-</body>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Instant Weather</title>
+      <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+      <h1>hello world</h1>
+      <form action="" method="get" oninput="isInputOk()" class="form">
+          <div class="form">
+            <label for="name">Entrez le code postal :</label>
+            <input type="text"  name="CodeP" id="name" required />
+          </div>
+          </div>
+          <div class="form">
+            <input type="submit" name ="submitButton" value="Valider"/>
+          </div>
+      </form>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/script_form.js"></script>
+  </body>
+  
 </html>
