@@ -1,11 +1,16 @@
-
+body{
+    max-width: 400px;
+    margin: auto;
+    height: 80vh;
+}
 .wrapper{
     display: flex;
     
 }
 #today{
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
+    border-bottom: gray 2px solid;
 }
 #sun{
     flex-direction: row;
@@ -26,10 +31,14 @@ h6, h3{
 }
 #spec{
     flex-grow: 2;
-    flex-direction: column;
-    align-items: baseline;
-    border-left: solid 1px;
+    flex-direction: row;
+    align-items:center;
     padding-left: 10px;
+    gap:50px;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 i{
     margin-right: 20px;
@@ -66,4 +75,11 @@ i{
 #forecast{
     overflow-x: scroll;
     padding: 5px;
+}
+#dayWind::before{
+    content: url("../images/svg/wi-wind-beaufort-0.svg");
+}
+#dayHum::before{
+    content: url("../images/svg/wi-humidity.svg");
+    display: inline;
 }
