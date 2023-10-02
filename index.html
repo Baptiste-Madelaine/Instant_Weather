@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instant Weather</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Document</title>
 </head>
 <body>
-    <h1>hello world</h1>
     <div>
-        test
+        <form id="postCodeForm">
+            <label for="postCodeInput">Enter a post code : </label>
+            <input type="text" id="postCodeInput">
+        </form>
+
+        <form id="cityForm">
+            <label for="cityInput">Select a city : </label>
+            <select id="cityInput"></select>
+            <input type="submit" id="submit" value="Submit">
+        </form>
     </div>
+    <p id="errors"></p>
+    <script src="../scripts/scriptAPI.js"></script>
 </body>
-<script src="scripts/script.js"></script>
-<script src="scripts/script_form.js"></script>
 </html>
