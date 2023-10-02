@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <link rel="stylesheet" href="../styles/template.css">
+
+</head>
+<body>
+    <template id="template">
+        <div class="wrapper" id="big">
+                <div id="today" class="wrapper">
+                    <div id="oui">
+                        <h2 id="city">Caen</h2>
+                        <div id="sun" class="wrapper">
+                            <img src="" alt="" id="svg_day">
+                            
+                            <div id="temp">
+                                <h3 id="maxTemp">27°C</h3>
+                                <h6 id="minTemp">26°C</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper" id="spec">
+                        <p id="dayWind"><i class="fa-solid fa-wind"></i>20 km/h</p>
+                        <p id="dayHum"><i class="fa-solid fa-signal"></i>6</p>
+                        <p><i class="fa-regular fa-clock"></i>0.2 h</p>
+                    </div>
+                </div>
+                <div id="forecast" class="wrapper">
+                    
+                </div>
+            </div>
+    </template>
+    <template id="template_forecast">
+        <div class="wrapper" id="card_forecast">
+            <h6 id="forecast_day">Demain</h6>
+            <img src="" id="svgs"></img>
+            <p><i class="fa-solid fa-wind"></i>20 km/h</p>
+            <p><i class="fa-solid fa-signal"></i>6</p>
+            <p><i class="fa-regular fa-clock"></i>0.2 h</p>
+        </div>
+    </template>
+    <script src="https://kit.fontawesome.com/cfa8c7d08e.js" crossorigin="anonymous"></script>
+    <script src="../scripts/mapping.js"></script>
+    <script src="../scripts/cards.js"></script>
+</body>
+</html>
