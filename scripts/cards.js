@@ -1,10 +1,18 @@
+const optionLat = document.getElementById("lat");
+const optionLong = document.getElementById("long");
+const optionRain = document.getElementById("rain");
+const optionWind = document.getElementById("wind");
+const optionDir = document.getElementById("direction");
+
+const numberInput = document.getElementById("numberInput");
+const numberDays = document.getElementById("numberDays");
+const template = document.getElementById("template");
+const template_forecast = document.getElementById("template_forecast");
+const body = document.body;
+const clone = document.importNode(template.content,true);
+const forecast = clone.querySelector("#forecast");
 
 function DisplayData(data){
-    const template = document.getElementById("template");
-    const template_forecast = document.getElementById("template_forecast");
-    const body = document.body;
-    const clone = document.importNode(template.content,true);
-    const forecast = clone.querySelector("#forecast");
 
     clone.querySelector("#svg_day").src = "../images/svg/"+ getWeatherInfo(data.forecast[0].weather).icon;
     clone.querySelector("#city").textContent = data.city.name;
@@ -48,11 +56,8 @@ document.addEventListener("DOMContentLoaded", function(){
     let urlString = window.location;
     let url = new URL(urlString);
     let insee = url.searchParams.get("insee");
-    const optionLat = document.getElementById("lat");
-    const optionLong = document.getElementById("long");
-    const optionRain = document.getElementById("rain");
-    const optionWind = document.getElementById("wind");
-    const optionDir = document.getElementById("direction");
+    numberDays.textContent = numberInput.value;
+    
 
     optionWind.addEventListener("change",evt => {
         document.querySelectorAll("#forecastWind, #dayWind").forEach(elem => elem.style.display = evt.target.checked ? "block":"none")
@@ -68,6 +73,17 @@ document.addEventListener("DOMContentLoaded", function(){
     })
     optionDir.addEventListener("change", evt => {
         document.querySelectorAll("#dayWindDir, #forecastWindDir").forEach(elem => elem.style.display = evt.target.checked ? "block":"none");
+    })
+    numberInput.addEventListener("change", function(){
+        numberDays.textContent = numberInput.value;
+        
+        for(let i=0;i<forecast.children.length;i++){
+            if(i+1<numberInput.value){
+                forecast.children[i].style.display = "";
+            }else{
+                forecast.children[i].style.display = "none";
+            }
+        }
     })
     // Define the URL for the weather API, including the access token
     const urlfetch = 'https://api.meteo-concept.com/api/forecast/daily?token=499016347b7f5474105959879d32e980720a47b5f693345e42cce58642eba8a6&insee=';
