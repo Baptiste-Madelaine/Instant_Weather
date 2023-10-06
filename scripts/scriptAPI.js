@@ -6,8 +6,8 @@ const errors = document.getElementById("errors");
 const regex = /^\d{5}$/;
 
 let codeInputValue = codeInput;
-
-cityForm.style.display = "none";
+cityForm.classList.add('hidden');
+//cityForm.className = 'hidden';
 
 document.getElementById("postCodeForm").addEventListener("submit", function (event) {
     event.preventDefault();
@@ -26,7 +26,17 @@ document.getElementById("postCodeForm").addEventListener("submit", function (eve
                     if (data.length === 0) {
                         throw new Error("The post code is wrong");
                     } else {
-                        cityForm.style.display = "block";
+                        errors.style.display = 'none';
+                        cityForm.classList.remove('hidden');
+                        //cityForm.className ='visible';
+
+                        // clear option 
+                        
+                        while(cityInput.firstChild)
+                        {
+                            cityInput.removeChild(cityInput.firstChild);
+                        }
+
                         data.forEach(element => {
                             let row = document.getElementById("cityInput");
                             const option = document.createElement("option");
@@ -37,6 +47,7 @@ document.getElementById("postCodeForm").addEventListener("submit", function (eve
                     }
                 })
                 .catch(error => {
+                    errors.style.display = '';
                     errors.textContent = error;
                 });
         }
@@ -46,11 +57,15 @@ document.getElementById("postCodeForm").addEventListener("submit", function (eve
     }
     catch (erreur) {
         errors.textContent = erreur.message;
+        //cityForm.className = 'hidden';
+        cityForm.classList.add('hidden');
+        
     }
 });
 
 cityForm.addEventListener("submit", function (event) {
     event.preventDefault();
     console.log(cityInput.value);
-    location.href = '../pages/cards.html?'+cityInput.value;
+    if(cityInput.value)
+        location.href = '../pages/cards.html?'+cityInput.value;
 });
