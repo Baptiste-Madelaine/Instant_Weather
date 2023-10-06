@@ -34,6 +34,8 @@ function DisplayData(data){
     clone_forecast.getElementById("forecastHum").textContent = data.forecast[1].probarain + "%";
     clone_forecast.getElementById("forecastSun").textContent = data.forecast[1].sun_hours + "h";
     clone_forecast.getElementById("forecastRainMM").textContent = data.forecast[1].rr10 + "mm";
+    clone_forecast.getElementById("forecastTempMax").textContent = data.forecast[1].tmax + "°C";
+    clone_forecast.getElementById("forecastTempMin").textContent = data.forecast[1].tmin + "°C";
 
     forecast.appendChild(clone_forecast);
 
@@ -46,6 +48,8 @@ function DisplayData(data){
         clone_forecast.getElementById("forecastHum").textContent = data.forecast[i].probarain + "%";
         clone_forecast.getElementById("forecastSun").textContent = data.forecast[i].sun_hours + "h";
         clone_forecast.getElementById("forecastRainMM").textContent = data.forecast[i].rr10 + "mm";
+        clone_forecast.getElementById("forecastTempMax").textContent = data.forecast[i].tmax + "°C";
+        clone_forecast.getElementById("forecastTempMin").textContent = data.forecast[i].tmin + "°C";
 
         forecast.appendChild(clone_forecast);
     }
@@ -74,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function(){
     optionDir.addEventListener("change", evt => {
         document.querySelectorAll("#dayWindDir, #forecastWindDir").forEach(elem => elem.style.display = evt.target.checked ? "block":"none");
     })
-    numberInput.addEventListener("change", function(){
+    numberInput.addEventListener("input", function(){
         numberDays.textContent = numberInput.value;
         
         for(let i=0;i<forecast.children.length;i++){
