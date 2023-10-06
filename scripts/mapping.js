@@ -1,7 +1,7 @@
 const weatherMappings = {
     0: {
       description: "Soleil",
-      icon: "wi-sun.svg"
+      icon: "wi-day-sunny.svg"
     },
     1: {
       description: "Peu nuageux",
