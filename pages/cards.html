@@ -9,24 +9,66 @@
 
 </head>
 <body>
+    <a href="../index.html">Home Page !</a>
+    <fieldset>
+        <legend>Choose options</legend>
+        <div>
+            <input type="checkbox" name="Lattitude" id="lat" checked>
+            <label for="Lattitude">Lattitude</label>
+        </div>
+        
+        <div>
+            <input type="checkbox" name="Longitude" id="long" checked>
+            <label for="Longitude">Longitude</label>
+        </div>
+        
+        <div>
+            <input type="checkbox" name="rain" id="rain" checked>
+            <label for="rain">Rain (mm)</label>
+        </div>
+        
+        <div>
+            <input type="checkbox" name="wind" id="wind" checked>
+            <label for="wind">Wind</label>
+        </div>
+        
+        <div>
+            <input type="checkbox" name="direction" id="direction" checked>
+            <label for="direction">Wind Direction</label>
+        </div>
+        
+    </fieldset>
+
+    <div>
+        <label for="numberInput">Number of days displayed : </label>
+        <br>
+        <input type="range" name="numberInput" id="numberInput" min="1" max="14" value="14">
+        <br>
+        <p id="numberDays"></p>
+    </div>
+
     <template id="template">
         <div class="wrapper" id="big">
                 <div id="today" class="wrapper">
                     <div id="oui">
-                        <h2 id="city">Caen</h2>
+                        <h2 id="city"></h2>
                         <div id="sun" class="wrapper">
                             <img src="" alt="" id="svg_day">
                             
                             <div id="temp">
-                                <h3 id="maxTemp">27°C</h3>
-                                <h6 id="minTemp">26°C</h6>
+                                <h3 id="maxTemp"></h3>
+                                <h6 id="minTemp"></h6>
                             </div>
                         </div>
                     </div>
                     <div class="wrapper" id="spec">
-                        <p id="dayWind"><i class="fa-solid fa-wind"></i>20 km/h</p>
-                        <p id="dayHum"><i class="fa-solid fa-signal"></i>6</p>
-                        <p><i class="fa-regular fa-clock"></i>0.2 h</p>
+                        <p id="dayWind"></p>
+                        <p id="dayHum"></p>
+                        <p id="daySum"></p>
+                        <p id="dayRainMM"></p>
+                        <p id="dayLat"></p>
+                        <p id="dayLong"></p>
+                        <p id="dayWindDir"></p>
                     </div>
                 </div>
                 <div id="forecast" class="wrapper">
@@ -36,13 +78,20 @@
     </template>
     <template id="template_forecast">
         <div class="wrapper" id="card_forecast">
-            <h6 id="forecast_day">Demain</h6>
+            <h6 id="forecast_day"></h6>
             <img src="" id="svgs"></img>
-            <p><i class="fa-solid fa-wind"></i>20 km/h</p>
-            <p><i class="fa-solid fa-signal"></i>6</p>
-            <p><i class="fa-regular fa-clock"></i>0.2 h</p>
+            <h3 id="forecastTempMax"></h3>
+            <h6 id="forecastTempMin"></h6>
+            <p id="forecastWind"></p>
+            <p id="forecastHum"></p>
+            <p id="forecastSun"></p>
+            <p id="forecastRainMM"></p>
+            <p id="forecastLat"></p>
+            <p id="forecastLong"></p>
+            <p id="forecastWindDir"></p>
         </div>
     </template>
+
     <script src="https://kit.fontawesome.com/cfa8c7d08e.js" crossorigin="anonymous"></script>
     <script src="../scripts/mapping.js"></script>
     <script src="../scripts/cards.js"></script>
