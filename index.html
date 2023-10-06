@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Document</title>
 </head>
 <body>
+    <img src="../images/svg/wi-day-cloudy-gusts.svg" id="logo" alt="logo "/>
     <div>
+        
         <form id="postCodeForm">
             <label for="postCodeInput">Enter a post code : </label>
-            <input type="text" id="postCodeInput">
+            <input type="text" id="postCodeInput" placeholder="ex : 14123">
         </form>
 
-        <form id="cityForm">
+        <form id="cityForm" >
             <label for="cityInput">Select a city : </label>
             <select id="cityInput"></select>
             <input type="submit" id="submit" value="Submit">
         </form>
+        <p id="errors"></p>
     </div>
-    <p id="errors"></p>
     <script src="../scripts/scriptAPI.js"></script>
 </body>
 </html>
