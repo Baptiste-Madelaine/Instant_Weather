@@ -22,7 +22,6 @@ document.getElementById("postCodeForm").addEventListener("submit", function (eve
                     return response.json();
                 })
                 .then(data => {
-                    console.log(data);
                     if (data.length === 0) {
                         throw new Error("The post code is wrong");
                     } else {
@@ -65,6 +64,5 @@ document.getElementById("postCodeForm").addEventListener("submit", function (eve
 
 cityForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log(cityInput.value);
     location.href = '../pages/cards.html?insee=' +cityInput.value;
 });

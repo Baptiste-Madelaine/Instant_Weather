@@ -12,7 +12,6 @@ body{
 }
 .wrapper{
     display: flex;
-    
 }
 a{
     text-decoration: none;
@@ -58,8 +57,10 @@ h6, h3{
     align-items:center;
     padding-left: 10px;
     justify-content: space-around;
-    padding-left: 20px;
-    padding-right: 20px;
+    flex-wrap: wrap;
+}
+#spec > *{
+    width: 75px;
 }
 i{
     margin-right: 20px;
@@ -87,7 +88,8 @@ i{
     gap: 20px;
     border: black 2px solid;
     padding: 10px;
-    min-width: 100px;
+    min-width: 150px;
+    width: 150px;
     border-radius: 25px;
     margin: 10px;
     padding-top: 30px;
@@ -96,7 +98,7 @@ i{
     margin: 0;
 }
 #forecast{
-    overflow-x: scroll;
+    overflow-x: auto;
     padding: 5px;
 }
 #dayWind::before, #forecastWind::before{
@@ -108,18 +110,49 @@ i{
 #dayHum::before, #forecastHum::before{
     content: url("../images/svg/wi-humidity.svg");
     display: block;
-    color: white;
-    fill: white;
     width: 30px;
+    margin: auto;
 }
 #daySum::before, #forecastSun::before{
     content: url("../images/svg/wi-sunrise.svg");
     display: block;
     width: 30px;
+    margin: auto;
+}
+#dayRainMM::before, #forecastRainMM::before{
+    content: url("../images/svg/wi-raindrops.svg");
+    display: block;
+    width: 50px;
+    margin: auto;
+}
+#dayLat::before, #forecastLat::before{
+    content: url("../images/svg/wi-direction-left.svg");
+    display: block;
+    width: 50px;
+    margin: auto;
+}
+#dayLong::before, #forecastLong::before{
+    content: url("../images/svg/wi-direction-up.svg");
+    display: block;
+    width: 50px;
+    margin: auto;
+}
+#dayWindDir::before, #forecastWindDir::before{
+    content: "N";
+    display: block;
 }
 #forecast_day{
     font-size: 170%;
 }
 #daySum{
     text-align: center;
+}
+#forecastSpec{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#forecastSpec > p{
+    width: 75px;
 }

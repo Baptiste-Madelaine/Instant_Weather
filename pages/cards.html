@@ -13,13 +13,13 @@
     <fieldset>
         <legend>Choose options</legend>
         <div>
-            <input type="checkbox" name="Lattitude" id="lat" checked>
-            <label for="Lattitude">Lattitude</label>
+            <input type="checkbox" name="latitude" id="lat" checked>
+            <label for="lat">Latitude</label>
         </div>
         
         <div>
-            <input type="checkbox" name="Longitude" id="long" checked>
-            <label for="Longitude">Longitude</label>
+            <input type="checkbox" name="long" id="long" checked>
+            <label for="long">Longitude</label>
         </div>
         
         <div>
@@ -53,7 +53,7 @@
                     <div id="oui">
                         <h2 id="city"></h2>
                         <div id="sun" class="wrapper">
-                            <img src="" alt="" id="svg_day">
+                            <img src="" alt="Image of the weather" id="svg_day">
                             
                             <div id="temp">
                                 <h3 id="maxTemp"></h3>
@@ -79,16 +79,19 @@
     <template id="template_forecast">
         <div class="wrapper" id="card_forecast">
             <h6 id="forecast_day"></h6>
-            <img src="" id="svgs"></img>
+            <img alt="Image of the weather" id="svgs">
             <h3 id="forecastTempMax"></h3>
             <h6 id="forecastTempMin"></h6>
-            <p id="forecastWind"></p>
-            <p id="forecastHum"></p>
-            <p id="forecastSun"></p>
-            <p id="forecastRainMM"></p>
-            <p id="forecastLat"></p>
-            <p id="forecastLong"></p>
-            <p id="forecastWindDir"></p>
+            <div id="forecastSpec">
+                <p id="forecastWind"></p>
+                <p id="forecastHum"></p>
+                <p id="forecastSun"></p>
+                <p id="forecastRainMM"></p>
+                <p id="forecastLat"></p>
+                <p id="forecastLong"></p>
+                <p id="forecastWindDir"></p>
+            </div>
+            
         </div>
     </template>
 
