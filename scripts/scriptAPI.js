@@ -64,5 +64,5 @@ document.getElementById("postCodeForm").addEventListener("submit", function (eve
 
 cityForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    location.href = '../pages/cards.html?insee=' +cityInput.value;
+    location.href = './pages/cards.html?insee=' +cityInput.value;
 });
