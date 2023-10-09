@@ -53,10 +53,6 @@ form{
 	font-size: 150%;
 }
 
-/*#postCodeForm{
-    
-    
-}*/
 #logo {
 	max-width: 30vh;
 	filter: invert(1);
@@ -83,7 +79,7 @@ form{
 }
 #cityForm.hidden{
     opacity: 0;
-    display: none;/* clean that*/
+    display: none;
 
 }
 #errors{
